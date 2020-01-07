@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/c-pher/plogger.svg?branch=master)](https://travis-ci.org/c-pher/plogger)
+
+
 ## Plogger
 
 Plogger - a simple high level logger wrapper to log into console/file with different level. Used built-in logger module.
