@@ -39,3 +39,13 @@ class MyClass(Logger):
     def method_name(self):
         self.logger.info('method_name invoked')
 ```
+
+- Another yet usage way
+```python
+from plogger import Logger
+
+logger = Logger('NAME').get_logger()
+
+logger.warning('log it as warning')
+logger.info('log it as info level')
+```
