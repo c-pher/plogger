@@ -55,6 +55,3 @@ class Logger:
                f'File logging: {self.file}\n' \
                f'File level: {self.file_level}\n' \
                f'File name: {self.name}.log'
-
-    def get_logger(self):
-        return Logger(self.name).__call__()

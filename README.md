@@ -7,6 +7,12 @@
 
 Plogger - a simple high level logger wrapper to log into console/file with different level. Used built-in logger module.
 
+## Result
+```cmd
+2020-01-08 02:03:47 [NAME] [LINE:21] [WARNING] log it as warning
+2020-01-08 02:03:47 [NAME] [LINE:22] [INFO] log it as info level
+```
+
 ## Installation
 For most users, the recommended method to install is via pip:
 ```cmd
@@ -44,7 +50,7 @@ class MyClass(Logger):
 ```python
 from plogger import Logger
 
-logger = Logger('NAME').get_logger()
+logger = Logger('NAME').__call__()
 
 logger.warning('log it as warning')
 logger.info('log it as info level')
