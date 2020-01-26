@@ -56,6 +56,6 @@ logger.warning('log it as warning')
 logger.info('log it as info level')
 ```
 
-###Changelog
-##### 0.0.1 (26.01.2020)
+## Changelog
+##### 1.0.0 (26.01.2020)
 Added logger() function
