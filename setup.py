@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='plogger',
-    version='0.0.1a2',
+    version='1.0.0',
     packages=['plogger'],
     url='https://github.com/c-pher/plogger.git',
     license='MIT',

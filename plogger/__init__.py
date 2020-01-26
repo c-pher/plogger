@@ -1,6 +1,51 @@
 import logging
 
 
+def logger(name: str,
+           log_format: str = '',
+           date_format: str = '',
+           console: bool = True,
+           file: bool = False,
+           enabled: bool = True):
+    """
+    Simple logger
+
+    :param name:
+    :param log_format:
+    :param date_format:
+    :param console:
+    :param file:
+    :param enabled:
+    :return:
+    """
+
+    # Get logger
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
+
+    log_format_ = log_format if log_format else '%(asctime)-15s | %(levelname)s | %(name)s | %(message)s'
+    date_format_ = date_format if date_format else '%Y-%m-%d %H:%M:%S'
+
+    formatter = logging.Formatter(fmt=log_format_, datefmt=date_format_)
+    logger.disabled = not enabled
+
+    # Console handler with a INFO log level
+    if console:
+        # use param stream=sys.stdout for stdout printing
+        ch = logging.StreamHandler()
+        ch.setLevel(logging.INFO)
+        ch.setFormatter(formatter)  # Add the formatter
+        logger.addHandler(ch)  # Add the handlers to the logger
+
+    # File handler which logs debug messages
+    if file:
+        fh = logging.FileHandler(f'{name}.log', mode='w')
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)  # Add the formatter
+        logger.addHandler(fh)  # Add the handlers to the logger
+    return logger
+
+
 class Logger:
     """Simple logger for inheritance only. By default log into console with INFO level"""
 
